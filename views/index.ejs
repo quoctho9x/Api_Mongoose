@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nodeJS and Web RTC</title>
+    <!-- <link rel="stylesheet" href="https://quoctho.herokuapp.com/style.css">-->
+</head>
+<body>
+<div id="chat">
+    <h3>User Online</h3>
+    <ul id="list-user-online"></ul>
+    <h3 id="my-peer">your id:</h3>
+    <video src="" id="localstream" width="300" controls></video>
+    <br>
+
+    <h3 id="friend-peer"></h3>
+    <video src="" id="friendstream" width="300" controls></video>
+    <br>
+    <br>
+    <input type="text" id="remoteId" placeholder="Remote ID">
+    <button id="btnCall">call</button>
+    <br>
+</div>
+<div id="dangky">
+    <input type="text" id="txtUsername" placeholder="enter your name">
+    <button id="btn-signUp"> dangky </button>
+</div>
+
+</body>
+<!--import script-->
+<!--<script src="https://quoctho.herokuapp.com/jquery.min.js"></script>
+<script src="https://quoctho.herokuapp.com/peer.js"></script>
+<script src="https://quoctho.herokuapp.com/socket.io.js"></script>
+<script src="https://quoctho.herokuapp.com/bundle.js"></script>-->
+
+<script src="jquery.min.js"></script>
+<script src="peer.js"></script>
+<script src="socket.io.js"></script>
+<script src="bundle.js"></script>
+
+
+</html>

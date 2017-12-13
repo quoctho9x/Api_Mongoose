@@ -1,0 +1,20 @@
+{
+   "user1" : {
+      "name" : "huong",
+	  "password" : "password1",
+	  "profession" : "sinhvien",
+	  "id": 2
+   },
+   "user2" : {
+      "name" : "manh",
+	  "password" : "password2",
+	  "profession" : "giangvien",
+	  "id": 3
+   },
+   "user3" : {
+      "name" : "tuyen",
+	  "password" : "password3",
+	  "profession" : "laptrinhvien",
+	  "id": 4
+   }
+}
