@@ -31,7 +31,7 @@ router.post('/users/authenticate', function (req, res) {//insert
                 // if user is found and password is right
                 // create a token with only our given payload
                 // we don't want to pass in the entire user since that has the password
-                const payload ={ name : user.user_name };
+                const payload ={user:user};
                 /* var token = jwt.sign(payload, config.secret);*/
                 var token = jwt.sign(payload, config.secret, {
                     expiresIn   : 600 // expires in 10m
@@ -108,9 +108,10 @@ router.post('/users/login', function (req, res) {//insert
 
 
 // GETS A SINGLE USER FROM THE DATABASE
-router.get('/users/:id', function (req, res) {//get
-    console.log(req.params.id);
-    User.findById(req.params.id, function (err, user) {
+router.get('/users/id', function (req, res) {//get
+    user = req.decoded.user;
+    console.log(user._id);
+    User.findById(user._id, function (err, user) {
         if (err) return res.status(500).send("There was a problem finding the user.");
         if (!user) return res.status(404).send("No user found.");
         res.status(200).send(user);
