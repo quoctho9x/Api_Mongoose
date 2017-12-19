@@ -117,6 +117,16 @@ router.get('/users/id', function (req, res) {//get
         res.status(200).send(user);
     });
 });
+// GETS A SINGLE USER FROM THE DATABASE
+router.post('/users/id', function (req, res) {//get
+    user = req.decoded.user;
+    console.log(user._id);
+    User.findById(user._id, function (err, user) {
+        if (err) return res.status(500).send("There was a problem finding the user.");
+        if (!user) return res.status(404).send("No user found.");
+        res.status(200).send(user);
+    });
+});
 
 // GETS USERS FROM THE DATABASE gt 30
 router.get('/users/dieukien/age30', function (req, res) {//get
