@@ -34,7 +34,7 @@ router.post('/users/authenticate', function (req, res) {//insert
                 const payload ={user:user};
                 /* var token = jwt.sign(payload, config.secret);*/
                 var token = jwt.sign(payload, config.secret, {
-                    expiresIn   : 600 // expires in 10m
+                    expiresIn   : 3600 // expires in 10m
                 });
 
                 // return the information including token as JSON
@@ -42,7 +42,7 @@ router.post('/users/authenticate', function (req, res) {//insert
                     success: true,
                     message: 'Enjoy your token!',
                     token: token,
-                    expiresIn :600,
+                    expiresIn :3600,
                     user:user
                 });
             }

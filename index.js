@@ -33,6 +33,10 @@ app.use(function (req,res,next) {
 // API ROUTES  ======
 // =======================
 
+// API ROUTES PRODUCTS
+var ProductsController = require('./products/ProductsController');
+app.use('/api/products', ProductsController);
+
 // API ROUTES USER
 var UserController = require('./user/UserController');
 app.use('/api', UserController);
