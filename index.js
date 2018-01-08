@@ -25,7 +25,6 @@ app.use(function (req,res,next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
-
     next();
 });
 
@@ -36,6 +35,10 @@ app.use(function (req,res,next) {
 // API ROUTES PRODUCTS
 var ProductsController = require('./products/ProductsController');
 app.use('/api/products', ProductsController);
+
+// API ROUTES NEWS
+var NewsController = require('./news/NewsController');
+app.use('/api/news', NewsController);
 
 // API ROUTES USER
 var UserController = require('./user/UserController');
