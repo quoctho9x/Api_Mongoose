@@ -10,7 +10,7 @@ var User = require('./User');
 
 var storage = multer.diskStorage({
     destination:function (req,file,cb) {
-        cb(null,'./public/Images')
+        cb(null,'./public/images')
     },
     filename:function (req,file,cb) {
         cb(null,file.originalname);
