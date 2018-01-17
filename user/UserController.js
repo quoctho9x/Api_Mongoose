@@ -22,7 +22,7 @@ router.post('/upload',upload.single('file'),function (req,res) {
     var user = JSON.parse(req.body.user);
     var avatart = user.avatar;
     if(req.file){
-        avatart = "https://quoctho.herokuapp.com/Images/"+req.file.filename ;
+        avatart = "https://quoctho.herokuapp.com/images/"+req.file.filename ;
     }
     var new_user = {
         _id: user._id,
