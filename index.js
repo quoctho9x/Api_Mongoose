@@ -3,6 +3,8 @@
 // =======================
 var express = require('express');
 var app = express();
+//var multer = require('multer');
+var path = require('path');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var config  = require('./config');
@@ -28,6 +30,30 @@ app.use(function (req,res,next) {
     next();
 });
 
+app.use(express.static('public'));
+/*var storage = multer.diskStorage({
+    destination:function (req,file,cb) {
+        cb(null,'./public/Images')
+    },
+    filename:function (req,file,cb) {
+        cb(null,file.originalname);
+    }
+});*/
+
+//var upload = multer({storage:storage});
+
+/*app.post('/upload',upload.single('file'),function (req,res) {
+    console.log('day image',req.file);
+    console.log('day content',req.body.user);
+    //console.log('link ', app.use(express.static(__dirname + 'upload')));
+    //res.send('upload thanh cong')
+});*/
+//app.use('/images', express.static(__dirname + '/Images'));
+app.set('view engine', 'ejs');
+
+/*app.use('/upload', function(req, res) {
+    res.render('index')
+});*/
 // =======================
 // API ROUTES  ======
 // =======================
