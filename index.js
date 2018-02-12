@@ -66,6 +66,10 @@ app.use('/api/products', ProductsController);
 var NewsController = require('./news/NewsController');
 app.use('/api/news', NewsController);
 
+// API ROUTES CARTS
+var CartsController = require('./carts/CartsController');
+app.use('/api/carts', CartsController);
+
 // API ROUTES USER
 var UserController = require('./user/UserController');
 app.use('/api', UserController);
